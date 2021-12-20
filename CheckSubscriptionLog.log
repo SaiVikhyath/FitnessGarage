@@ -1,0 +1,25 @@
+2021-11-03 14:40:26,464 DB connection failed!!!
+2021-12-21 00:17:33,729 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:17:36,579 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 200 None
+2021-12-21 00:17:36,668 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:17:37,819 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 200 None
+2021-12-21 00:17:37,867 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:17:38,790 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 400 None
+2021-12-21 00:28:33,913 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:28:35,018 https://www.fast2sms.com:443 "GET /dev/bulk HTTP/1.1" 401 None
+2021-12-21 00:28:35,067 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:28:35,981 https://www.fast2sms.com:443 "GET /dev/bulk HTTP/1.1" 401 None
+2021-12-21 00:28:36,008 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:28:36,619 https://www.fast2sms.com:443 "GET /dev/bulk HTTP/1.1" 525 None
+2021-12-21 00:55:43,683 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:55:44,999 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 200 None
+2021-12-21 00:55:52,387 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:55:53,412 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 200 None
+2021-12-21 00:55:59,029 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 00:55:59,758 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 525 None
+2021-12-21 01:11:00,368 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 01:11:01,746 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 200 None
+2021-12-21 01:11:07,789 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 01:11:08,796 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 200 None
+2021-12-21 01:11:14,188 Starting new HTTPS connection (1): www.fast2sms.com:443
+2021-12-21 01:11:15,015 https://www.fast2sms.com:443 "POST /dev/bulk HTTP/1.1" 400 None

@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Garage | Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/dashboardStyles.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="navbar">
+            <img src="{% static '/styles/images/logo.png' %}" class="logo">
+            <nav>
+                <ul>
+                    <li><b><a href="/">HOME</a></b></li>
+                    <li><b><a href="register.html">REGISTER USERS</a></b></li>
+                    <li><b><a href="dashboard.html">DASHBOARD</a></b></li>
+                </ul>
+            </nav> 
+        </div>
+
+        <div class="row">
+
+            <div class="col1">
+                <ul>
+                    <hr class="hl">
+                    <li><b><a href="">DISPLAY ALL USERS</a></b></li><hr class="hl">
+                    <li><b><a href="">PERSONAL TRAINING USERS</a></b></li><hr class="hl">
+                    <li><b><a href="">CARDIO USERS</a></b></li><hr class="hl">
+                    <li><b><a href="">WEIGHT USERS</a></b></li><hr class="hl">
+                </ul>
+            </div>
+
+            <div class="col2" style="display: flex; align-items: center;">
+
+                <div id="piechart2" class="piechart2" style="position:absolute; padding-top: 60px; float:inline-end; width: 20%; padding-left: 480px;"></div>
+
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+                    <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    var stats = JSON.parse("{{data|escapejs}}");
+                    var personalTraining = stats["personalTraining"];
+                    var noPersonalTraining = stats["noPersonalTraining"];
+                    
+
+                    function drawChart() {
+                    console.log(stats);
+                    console.log(personalTraining);
+                    console.log(noPersonalTraining);
+                    console.log(cardioMembers);
+                    console.log(weightsMembers);
+                    var data = google.visualization.arrayToDataTable([
+                    ['Subscription Type', 'Count'],
+                    ['Yes', personalTraining],
+                    ['No', noPersonalTraining],
+                    ]);
+
+                    var options = {title: 'Personal Training', width: 550, height: 400, backgroundColor: 'lightgray', titleTextStyle: {bold: true, fontSize:20}, is3D: true};
+
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+                    chart.draw(data, options);
+                    }
+                    </script>
+                                
+                <div id="piechart1" class="piechart1" style="position:absolute; padding-top: 60px; float: inline-start; width: 20%;"></div>
+
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+                    <script type="text/javascript">
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+                    
+                    var stats = JSON.parse("{{data|escapejs}}");
+                    var cardioMembers = stats["cardioMembers"];
+                    var weightsMembers = stats["weightsMembers"];
+                    
+
+                    function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                    ['Subscription Type', 'Count'],
+                    ['Cardio', cardioMembers],
+                    ['Weight Training', weightsMembers],
+                    ]);
+
+                    var options = {title: 'Cardio vs Weight-Training', width: 550, height: 400, backgroundColor: 'lightgray', titleTextStyle: {bold: true, fontSize:20}, is3D: true};
+
+                    var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+                    chart.draw(data, options);
+                    }
+                    </script>
+
+            </div>
+        </div>
+        
+        <div class="footer">
+            <footer>
+                <h4>Developed by Sai Vikhyath</h4>
+            </footer>
+        </div>
+
+    </div>
+    
+</body>
+</html>

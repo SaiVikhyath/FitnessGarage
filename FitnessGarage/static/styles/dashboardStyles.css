@@ -1,0 +1,110 @@
+body{
+    width: 95%;
+    height: 100%;
+    background: lightgray;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    box-sizing: border-box;
+}
+
+.navbar{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: black;
+}
+
+.logo{
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 90px;
+    padding: 5px;
+    padding-right: 40px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.row .col1 ul li{
+    list-style: none;   
+}
+
+.row .col1 ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    line-height: 70px;
+}
+
+.row .col1 ul .hl{
+    border: 1px solid black;
+}
+
+.row .col1 ul{
+    margin: 0%;
+    padding-left: 0%;
+    padding: 10px;
+}
+
+.row{
+    display: flex;
+    height: 100%;
+}
+
+.col1{
+    margin-top: 20px;
+    padding: 30px;
+    padding-top: 2%;
+    padding-bottom: 0%;
+    height: 67vh;
+    background: linear-gradient(135deg, crimson, cornflowerblue);
+    text-align: center;
+}
+
+.row .col2{
+    display: flex;
+    margin-top: 20px;
+    padding: 30px;
+    padding-top: 2%;
+    padding-bottom: 0%;
+    height: 67vh;
+    align-items: center;
+    background: lightgray;
+}
+
+
+.footer{
+    position: absolute;
+    bottom: 10px;
+    height: 10%;
+    width: 91.4%;
+    margin-bottom: 0%;
+    background: black;
+    color: white;
+    text-align: center;
+    text-decoration: whitesmoke;
+    font-size: 20px;
+}

@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Garage | Register a User</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/registerStyles.css' %}">
+
+</head>
+
+<body>
+    
+    <div class="container">
+        
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><b><a href="/">HOME</a></b></li>
+                    <li><b><a href="dashboard.html">DASHBOARD</a></b></li>
+                </ul>
+            </nav> 
+        </div>
+
+        <br><br>
+        
+        <div class="title">Registration</div>
+        
+        <form action="#" method="post" name="registrationForm">
+            
+            {% csrf_token %}
+            
+            <div class="user-details">
+                
+                <div class="input-box">
+                    <span class="details">Registration Number</span>
+                    <input type="text" name="regNo" id="regNo" placeholder="Enter registration number" required>
+                </div>
+                
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" name="name" id="name" placeholder="Enter full name" pattern="[A-Za-z. ]+"  oninvalid="this.setCustomValidity('Please enter a proper name')" onchange="try{setCustomValidity('')}catch(e){}" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="tel" name="mobileNo" id="mobileNo" placeholder="Enter mobile number" pattern="[7|8|9][0-9]{9}" oninvalid="this.setCustomValidity('Please enter a valid number')" onchange="try{setCustomValidity('')}catch(e){}" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Email ID</span>
+                    <input type="email" name="emailID" id="emailID" placeholder="Enter email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  oninvalid="this.setCustomValidity('Please enter a valid email')" onchange="try{setCustomValidity('')}catch(e){}" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="plans">Subscription Duration</label>
+                    <div class="dropdown">
+                        <select name="plans" id="plans" required>
+                            <option value="one">1 month</option>
+                            <option value="three">3 months</option>
+                            <option value="six">6 months</option>
+                            <option value="twelve">12 months</option>
+                        </select>
+                        <span class="focus"></span>
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="subscription-type">
+                <input type="radio" name="subscriptionType" value="cardio" id="dot-1" checked="checked">
+                <input type="radio" name="subscriptionType" value="weights" id="dot-2">
+                <span class="subscription-title">Subscription Plan</span>
+                <div class="category" id="subscriptionType">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="subscription" id="cardio">Cardio</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="subscription" id="weights">Weight Training</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="personal-training">
+                <input type="radio" name="personaltraining" value="yes" id="dot-3" checked="checked">
+                <input type="radio" name="personaltraining" value="no" id="dot-4">
+                <span class="pt-title">Personal Training</span>
+                <div class="category" id="personalTraining">
+                    <label for="dot-3">
+                        <span class="dot three"></span>
+                        <span class="personaltraining" id="yes">Yes</span>
+                    </label>
+                    <label for="dot-4">
+                        <span class="dot four"></span>
+                        <span class="personaltraining" id="no">No</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
