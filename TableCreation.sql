@@ -108,5 +108,5 @@ where email = 'praveen@gmail.com';
 
 
 update GymMembers
-set startdate = '1635107411'
+set startdate = '1634928471'
 where regno='0';

@@ -1,1 +1,2 @@
-python CheckSubscription.py
+workon FitnessGarage && python CheckSubscription.py
+pause

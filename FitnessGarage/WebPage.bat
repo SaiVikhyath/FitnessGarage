@@ -1,1 +1,2 @@
-python manage.py runserver
+workon FitnessGarage && python manage.py runserver
+pause

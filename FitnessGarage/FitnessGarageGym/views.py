@@ -36,16 +36,6 @@ def register(request):
         startDate = int(time.time())        
         subscriptionType = subscriptionType.capitalize()
         personalTraining = personalTraining.capitalize()
-        print()
-        print(registrationNo, type(registrationNo))
-        print(custName, type(custName))
-        print(mobileNo, type(mobileNo))
-        print(emailID, type(emailID))
-        print(startDate)
-        print(subscriptionDuration, type(subscriptionDuration))
-        print(subscriptionType, type(subscriptionType))
-        print(personalTraining, type(personalTraining))
-        print()
         cur.execute("""INSERT INTO GymMembers 
         (regno, membername, phonenumber, email, startdate, subscription, subscriptiontype, personaltraining) 
         VALUES 
@@ -69,9 +59,4 @@ def dashboard(request):
     "cardioMembers": int(cardioMembers),
     "weightsMembers": int(weightsMembers)}
     stats = dumps(stats)
-    print(gymStats)
-    print(totalMembers)
-    print(personalTraining)
-    print(cardioMembers)
-    print(weightsMembers)
     return render(request, 'dashboard.html', {'data': stats})
