@@ -26,7 +26,7 @@ except:
     print("Unable to open log file")
 
 try:
-    con = psycopg2.connect(database="FitnessGarage", user="GymAdmin", password="IamAdmin@1235", host="127.0.0.1", port="5432")
+    con = psycopg2.connect(database="*********", user="*********", password="*********", host="127.0.0.1", port="5432")
 except:
     logger.error("DB connection failed!!!")
 
@@ -75,7 +75,7 @@ for i in gymDetails:
                 "numbers" : mobileNo,
             }
             headers = {
-                "authorization" : "AXkp5NdE0JL9votFqmYMIWTUhceiQ8D1GOlH2rw4jySn67RgPxlAHthDOr4nbJQo3qzgRCW96V1KIGP8",
+                "authorization" : "************",
                 "Content-Type" : "application/x-www-form-urlencoded",
                 "Cache-Control" : "no-cache"
             }
@@ -86,7 +86,7 @@ for i in gymDetails:
             BODY = "\n\n\nHello " + name + ", \n\nThis is to notify you that your gym subscription ends in " + endsIndays + ". Please renew your subscription.\n\nThanks & Regards\nPraveen Yadav\nFitness Garage\n\n"
             message = """From: %s\r\nTo: %s\nSubject: %s\n\n\n%s""" % (FROM, emailID, SUBJECT, BODY)
             server = smtplib.SMTP_SSL(SERVER, 465)
-            server.login(FROM, "Fitnessgarage")
+            server.login(FROM, "********")
             server.sendmail(FROM, emailID, message)
             server.quit()
         else:
@@ -99,7 +99,7 @@ for i in gymDetails:
                 "numbers" : mobileNo,
             }
             headers = {
-                "authorization" : "AXkp5NdE0JL9votFqmYMIWTUhceiQ8D1GOlH2rw4jySn67RgPxlAHthDOr4nbJQo3qzgRCW96V1KIGP8",
+                "authorization" : "***********",
                 "Content-Type" : "application/x-www-form-urlencoded",
                 "Cache-Control" : "no-cache"
             }
@@ -111,7 +111,7 @@ for i in gymDetails:
             BODY = "Hello " + name + ", \n\n\tThis is to notify you that your gym subscription ends today. Please renew your subscription.\n\nThanks & Regards\nPraveen Yadav\nFitness Garage"
             message = """From: %s\r\nTo: %s\nSubject: %s\n\n\n%s""" % (FROM, emailID, SUBJECT, BODY)
             server = smtplib.SMTP_SSL(SERVER, 465)
-            server.login(FROM, "Fitnessgarage")
+            server.login(FROM, "***********")
             server.sendmail(FROM, emailID, message)
             server.quit()
     else:
@@ -129,7 +129,7 @@ subscriptionEndsData = {
 }
 
 headers = {
-    "authorization" : "AXkp5NdE0JL9votFqmYMIWTUhceiQ8D1GOlH2rw4jySn67RgPxlAHthDOr4nbJQo3qzgRCW96V1KIGP8",
+    "authorization" : "*************",
     "Content-Type" : "application/x-www-form-urlencoded",
     "Cache-Control" : "no-cache"
 }
@@ -141,6 +141,6 @@ if subscriptionEndsList:
     BODY = "Hello Praveen\n\n\tThis is to notify you that the following customer's gym subscription ends today.\n\nNames : "+ subscriptionEndsString +"\n\nThanks\nFitness Garage"
     message = """From: %s\r\nTo: %s\nSubject: %s\n\n\n%s""" % (FROM, FROM, "SUBSCRIPTIONS ENDING TODAY", BODY)
     server = smtplib.SMTP_SSL(SERVER, 465)
-    server.login(FROM, "Fitnessgarage")
+    server.login(FROM, "**********")
     server.sendmail(FROM, FROM, message)
     server.quit()
