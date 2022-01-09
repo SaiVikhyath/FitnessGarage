@@ -21,7 +21,7 @@ plansDict = {"one": 1, "three": 3, "six": 6, "twelve": 12}
 smsURL = "https://www.fast2sms.com/dev/bulkV2"
 
 try:
-    con = psycopg2.connect(database="FitnessGarage", user="GymAdmin", password="IamAdmin@1235", host="127.0.0.1", port="5432")
+    con = psycopg2.connect(database="FitnessGarage", user="**********", password="*********", host="127.0.0.1", port="5432")
 except:
     print("DB Connectivity failed!!!")
 
@@ -63,7 +63,7 @@ def register(request):
             #     "numbers" : mobileNo,
             # }
             # headers = {
-            #     "authorization" : "AXkp5NdE0JL9votFqmYMIWTUhceiQ8D1GOlH2rw4jySn67RgPxlAHthDOr4nbJQo3qzgRCW96V1KIGP8",
+            #     "authorization" : "***************",
             #     "Content-Type" : "application/x-www-form-urlencoded",
             #     "Cache-Control" : "no-cache"
             # }
@@ -73,7 +73,7 @@ def register(request):
             # BODY = "\n\n\nHello " + custName + "\n\nWelcome to FitnessGarage. Thank you for " + subscriptionType + " subscription.\n\nPraveen Yadav\nFitness Garage\n\n"
             # message = """From: %s\r\nTo: %s\nSubject: %s\n\n\n%s""" % (FROM, emailID, SUBJECT, BODY)
             # server = smtplib.SMTP_SSL(SERVER, 465)
-            # server.login(FROM, "Fitnessgarage")
+            # server.login(FROM, "*********")
             # server.sendmail(FROM, emailID, message)
             # server.quit()
             #return render(request, 'register.html')
