@@ -8,12 +8,12 @@ startDate varchar(255) not null,
 subscription varchar(255) not null
 );
 
-
+drop view GymStats;
 create view GymStats as
 select (select count(*) from GymMembers) as totalmembers,
 (select count(*) from GymMembers where personaltraining='Yes') as personaltraining,
 (select count(*) from GymMembers where subscriptiontype='Cardio') as cardiomembers,
-(select count(*) from GymMembers where subscriptiontype='Weight Training') weightsmembers;
+(select count(*) from GymMembers where subscriptiontype='Weights') weightsmembers;
 
 
 insert into GymStats values (0,0,0,0);
@@ -39,19 +39,24 @@ select extract(epoch from now());
 update GymMembers 
 set personalTraining='No' where regNo='100';
 
+delete from GymMembers
+where membername='Fitness Garage';
+rollback;
 
-
+drop view PersonalTraining;
 create view PersonalTraining as
 select * from GymMembers
 where personaltraining='Yes';
 
+drop view CardioMembers;
 create view CardioMembers as
 select * from GymMembers
 where subscriptiontype='Cardio';
 
+drop view WeightMembers;
 create view WeightMembers as
 select * from GymMembers
-where subscriptiontype='Weight Training';
+where subscriptiontype='Weights';
 
 
 
@@ -93,7 +98,7 @@ insert into GymMembers values
 ('12', 'PY', '9963475569', 'praveen8@gmail.com', extract(epoch from current_date) - 1*29*24*60*60, '1');
 
 insert into GymMembers values
-('0', 'Vikhyath', '7893744257', 'vikhyath456@gmail.com', extract(epoch from current_date) - 2*29*24*60*60, '2');
+('0', 'Vikhyath', '7893744257', 'vikhyath456@gmail.com', '1638190478', '1');
 
 insert into GymMembers values
 ('13', 'Test', '9390109846', 'vikhyath456@gmail.com', '1635107420', '2');
@@ -110,3 +115,7 @@ where email = 'praveen@gmail.com';
 update GymMembers
 set startdate = '1634928471'
 where regno='0';
+
+
+delete from GymMembers
+where phonenumber='7893744257';

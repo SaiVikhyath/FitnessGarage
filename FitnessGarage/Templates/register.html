@@ -24,7 +24,7 @@
             </nav> 
         </div>
 
-        <br><br>
+        <br>
         
         <div class="title">Registration</div>
         
@@ -35,18 +35,13 @@
             <div class="user-details">
                 
                 <div class="input-box">
-                    <span class="details">Registration Number</span>
-                    <input type="text" name="regNo" id="regNo" placeholder="Enter registration number" required>
-                </div>
-                
-                <div class="input-box">
                     <span class="details">Full Name</span>
                     <input type="text" name="name" id="name" placeholder="Enter full name" pattern="[A-Za-z. ]+"  oninvalid="this.setCustomValidity('Please enter a proper name')" onchange="try{setCustomValidity('')}catch(e){}" required>
                 </div>
 
                 <div class="input-box">
                     <span class="details">Phone Number</span>
-                    <input type="tel" name="mobileNo" id="mobileNo" placeholder="Enter mobile number" pattern="[7|8|9][0-9]{9}" oninvalid="this.setCustomValidity('Please enter a valid number')" onchange="try{setCustomValidity('')}catch(e){}" required>
+                    <input type="tel" name="mobileNo" id="mobileNo" placeholder="Enter mobile number" pattern="[6|7|8|9][0-9]{9}" oninvalid="this.setCustomValidity('Please enter a valid number')" onchange="try{setCustomValidity('')}catch(e){}" required>
                 </div>
 
                 <div class="input-box">
@@ -104,8 +99,13 @@
             <div class="button">
                 <input type="submit" value="Register">
             </div>
-
+        
         </form>
+
+        <div class="credit">
+            <center><h4 style="background: linear-gradient(135deg, #a7bfe8, #6190e8); color:black;">Developed by Sai Vikhyath</h4></center>
+        </div>
+
     </div>
 </body>
 </html>

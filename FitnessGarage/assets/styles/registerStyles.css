@@ -7,7 +7,6 @@
 }
 
 body{
-  display: flex;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -26,7 +25,6 @@ body{
 
 .navbar{
     height: 20%;
-    display: flex;
     text-align: center;
     background: linear-gradient(135deg, #a7bfe8, #6190e8);
 }
@@ -41,6 +39,12 @@ nav ul li a{
     text-decoration: none;
     color: #fff;
     font-size: 20px;
+    text-align: center;
+}
+
+.container .credit{
+    background: linear-gradient(135deg, #a7bfe8, #6190e8);
+    color: #fff;
     text-align: center;
 }
 
@@ -239,3 +243,4 @@ form .button input:hover{
         width: 0;
     }
 }
+

@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Garage | Weights</title>
+</head>
+<body style="background-color:white; position: relative;">
+
+    <div class="container" style="position: relative; height: 10%; width: 100%; align-items: center;">
+
+        <div class="navbar" style="position: relative; height: 10%; width: 100%; display: flex; align-items: center; background: #101820FF;">
+            <img src="{% static '/styles/images/logo.png' %}" class="logo" style="width: 90px; height: 40px; cursor: pointer; margin-left: 20px;">
+            <nav style="flex: 1; text-align: right;">
+                <ul>
+                    <li style="list-style: none; display: inline-block; margin-left: 90px; padding: 5px; padding-right: 40px;"><b><a href="/" style="text-decoration: none; color: #F2AA4CFF; font-size: 20px;">HOME</a></b></li>
+                    <li style="list-style: none; display: inline-block; margin-left: 90px; padding: 5px; padding-right: 40px;"><b><a href="register.html" style="text-decoration: none; color: #F2AA4CFF; font-size: 20px;">REGISTER USERS</a></b></li>
+                    <li style="list-style: none; display: inline-block; margin-left: 90px; padding: 5px; padding-right: 40px;"><b><a href="dashboard.html" style="text-decoration: none; color: #F2AA4CFF; font-size: 20px;">DASHBOARD</a></b></li>
+                </ul>
+            </nav> 
+        </div>
+
+        <div class="table" style="position: relative; top: 10px; bottom: 10px; left: 60px; right: 60px; height: 70%; width: 93%; display: flex;">
+            <center><table style="position: relative; top: 5px; bottom: 1px; border-collapse:collapse; margin: 25px 0; font-size: 1.2em; font-family: sans-serif; min-width: 400px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">
+                <tr style="background-color: #101820FF; color: #F2AA4CFF; text-align: left; width: 100%;">
+                    <b><th style="padding: 12px 15px;">Customer Name</th></b>
+                    <th style="padding: 12px 15px;">Phone Number</th>
+                    <th style="padding: 12px 15px;">Email</th>
+                    <th style="padding: 12px 15px;">Start Date</th>
+                    <th style="padding: 12px 15px;">Subscription Duration</th>
+                    <th style="padding: 12px 15px;">Subscription Type</th>
+                </tr>
+                {% for ptm in pt %}
+                    <tr style="background-color:#F2AA4CFF ; color: #101820FF; text-align: left; width: 100%;">
+                        <td style="padding: 12px 15px;"><b>{{ptm.0}}</b></td>
+                        <td style="padding: 12px 15px;"><b>{{ptm.1}}</b></td>
+                        <td style="padding: 12px 15px;"><b>{{ptm.2}}</b></td>
+                        <td style="padding: 12px 15px; white-space: nowrap; overflow: hidden; text-overflow:ellipsis;"><b>{{ptm.3}}</b></td>
+                        <td style="padding: 12px 15px;text-align: center;"><b>{{ptm.4}}</b></td>
+                        <td style="padding: 12px 15px;"><b>{{ptm.5}}</b></td>
+                    </tr>
+                {% endfor %}
+            </table></center>
+
+            <div class="footer" style="position: absolute; top: 102%; transform: translateX(-4.5%); bottom: 10px; height: 70px; width: 107.7%; background: #101820FF; text-align: center; font-size: 20px;">
+                <footer>
+                    <h4 style="position:relative; text-align:center; color: #F2AA4CFF">Developed by Sai Vikhyath</h4>
+                </footer>
+                <br style="margin-bottom: -1px">
+            </div>
+
+        </div>
+    
+    </div>
+            
+</body>
+</html>
